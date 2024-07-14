@@ -13,7 +13,7 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG)
 # Database configuration
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Rohan712abc$'
+app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'railway_reservation'
 
 mysql = MySQL(app)
