@@ -1,0 +1,60 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:19:04] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:19:10] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:19:17] "GET /trains HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:19:19] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+ERROR:root:Error in /reserve: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`railway_reservation`.`reservations`, CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`train_id`) REFERENCES `trains` (`id`))')
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:19:25] "[35m[1mPOST /reserve HTTP/1.1[0m" 500 -
+ERROR:root:Error in /trains: Object of type timedelta is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:24:09] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+ERROR:root:Error in /trains: Object of type timedelta is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:24:20] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:24:25] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:24:37] "POST /login HTTP/1.1" 200 -
+ERROR:root:Error in /trains: Object of type timedelta is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:24:40] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:root:Error in /trains: Object of type timedelta is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:25:26] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:26:28] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:26:32] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+ERROR:root:Error fetching trains: Object of type timedelta is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:26:35] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:root:Error fetching trains: Object of type timedelta is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:41:33] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:41:37] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:41:40] "POST /login HTTP/1.1" 200 -
+ERROR:root:Error fetching trains: Object of type timedelta is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:41:43] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+ERROR:root:Error in /reserve: (1146, "Table 'railway_reservation.reservations' doesn't exist")
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:41:47] "[35m[1mPOST /reserve HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:root:Error fetching trains: tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:46:07] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:46:11] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:46:13] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:46:16] "POST /login HTTP/1.1" 200 -
+ERROR:root:Error fetching trains: tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:46:21] "[35m[1mGET /trains HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:46:52] "GET /trains HTTP/1.1" 200 -
+ERROR:root:Error in /reserve: (1146, "Table 'railway_reservation.reservations' doesn't exist")
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:47:20] "[35m[1mPOST /reserve HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:49:09] "POST /reserve HTTP/1.1" 200 -
+ERROR:root:Error in /reserve: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`railway_reservation`.`reservations`, CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))')
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:49:57] "[35m[1mPOST /reserve HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Jul/2024 14:50:30] "POST /reserve HTTP/1.1" 200 -
