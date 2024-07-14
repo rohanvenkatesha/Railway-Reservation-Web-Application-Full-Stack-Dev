@@ -28,7 +28,7 @@ app.json_encoder = CustomJSONEncoder
 
 @app.route('/')
 def home():
-    return "Hello, Flask!"
+    return "Hello, Welcome to Railway Reservation Api Testing!"
 
 @app.route('/register', methods=['POST'])
 def register():
