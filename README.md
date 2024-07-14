@@ -1,10 +1,12 @@
 # Railway-Reservation-Flask-Backend-Api-Testing
 
-Start the flask app in seperate terminal
+modify the database credentials in the app.py file accordingly
+
+Start the Flask app in a separate terminal
 
 $flask run
 
-## Follow these Steps for Api Testing
+## Follow these Steps for API Testing
 
 curl -X POST -H "Content-Type: application/json" -d "{\"name\":\"John Doe\", \"email\":\"john@example.com\", \"password\":\"1234\"}" http://localhost:5000/register
 
