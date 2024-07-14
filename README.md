@@ -1,6 +1,7 @@
 # Railway-Reservation-Flask-Backend-Api-Testing
 
 Start the flask app in seperate terminal
+
 $flask run
 
 ## Follow these Steps for Api Testing
