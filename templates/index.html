@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation</title>
+</head>
+<body>
+
+    <h1>Railway Reservation System</h1>
+
+    <!-- Registration Form -->
+    <h2>Register</h2>
+    <form id="registerForm">
+        Name: <input type="text" id="name"><br>
+        Email: <input type="email" id="email"><br>
+        Password: <input type="password" id="password"><br>
+        <button type="button" onclick="registerUser()">Register</button>
+    </form>
+
+    <!-- Login Form -->
+    <h2>Login</h2>
+    <form id="loginForm">
+        Email: <input type="email" id="loginEmail"><br>
+        Password: <input type="password" id="loginPassword"><br>
+        <button type="button" onclick="loginUser()">Login</button>
+    </form>
+
+    <!-- Display Trains -->
+    <h2>Trains</h2>
+    <button type="button" onclick="getTrains()">Get Trains</button>
+    <ul id="trainsList"></ul>
+
+    <!-- Reserve Ticket Form -->
+    <h2>Reserve Ticket</h2>
+    <form id="reserveForm">
+        User ID: <input type="text" id="userId"><br>
+        Train ID: <input type="text" id="trainId"><br>
+        Date: <input type="date" id="date"><br>
+        <button type="button" onclick="reserveTicket()">Reserve</button>
+    </form>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>
