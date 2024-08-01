@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_mysqldb import MySQL
 import json
 from datetime import timedelta
@@ -13,7 +13,7 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG)
 # Database configuration
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_PASSWORD'] = 'new_password'
 app.config['MYSQL_DB'] = 'railway_reservation'
 
 mysql = MySQL(app)
@@ -28,7 +28,7 @@ app.json_encoder = CustomJSONEncoder
 
 @app.route('/')
 def home():
-    return "Hello, Welcome to Railway Reservation Api Testing!"
+    return render_template('index.html')
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -70,19 +70,23 @@ def login():
             return jsonify({'message': 'Invalid credentials!'}), 401
     except Exception as e:
         logging.error("Error in /login: %s", str(e))
-        return jsonify({'message': 'Internal Server Error'}), 500
+        return jsonify({'message': 'Internal Rohan Server Error'}), 500
 
 @app.route('/trains', methods=['GET'])
 def get_trains():
     try:
+        # Log request details
+        logging.info("Received request for /trains")
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM trains')
         trains = cursor.fetchall()
         cursor.close()
 
+        # Log data fetched
+        logging.info("Fetched trains data: %s", trains)
+
         # Convert timedelta to string representation
         for train in trains:
-            # Assuming 'departure_time' and 'arrival_time' are timedelta objects in your data
             train['departure_time'] = str(train['departure_time'])
             train['arrival_time'] = str(train['arrival_time'])
 
@@ -90,6 +94,7 @@ def get_trains():
     except Exception as e:
         logging.error("Error fetching trains: %s", str(e))
         return jsonify({'error': 'Failed to fetch trains'}), 500
+
 
 
 @app.route('/reserve', methods=['POST'])
