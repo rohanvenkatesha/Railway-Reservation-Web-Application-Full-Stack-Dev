@@ -4,44 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Railway Reservation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-
     <h1>Railway Reservation System</h1>
 
-    <!-- Registration Form -->
-    <h2>Register</h2>
-    <form id="registerForm">
-        Name: <input type="text" id="name"><br>
-        Email: <input type="email" id="email"><br>
-        Password: <input type="password" id="password"><br>
-        <button type="button" onclick="registerUser()">Register</button>
-    </form>
+    <div id="register-form">
+        <h2>Register</h2>
+        <label for="register-name">Name:</label>
+        <input type="text" id="register-name" name="name"><br><br>
+        <label for="register-email">Email:</label>
+        <input type="text" id="register-email" name="email"><br><br>
+        <label for="register-password">Password:</label>
+        <input type="password" id="register-password" name="password"><br><br>
+        <button onclick="register()">Register</button>
+        <p id="register-message"></p>
+    </div>
 
-    <!-- Login Form -->
-    <h2>Login</h2>
-    <form id="loginForm">
-        Email: <input type="email" id="loginEmail"><br>
-        Password: <input type="password" id="loginPassword"><br>
-        <button type="button" onclick="loginUser()">Login</button>
-    </form>
+    <div id="login-form">
+        <h2>Login</h2>
+        <label for="login-email">Email:</label>
+        <input type="text" id="login-email" name="email"><br><br>
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="password"><br><br>
+        <button onclick="login()">Login</button>
+        <p id="login-message"></p>
+    </div>
 
-    <!-- Display Trains -->
-    <h2>Trains</h2>
-    <button type="button" onclick="getTrains()">Get Trains</button>
-    <ul id="trainsList"></ul>
+    <div id="user-section" style="display:none;">
+        <h2>Welcome to the Railway Reservation System</h2>
+        <button onclick="getTrains()">View Available Trains</button>
+        <button onclick="reserveTicket()">Reserve a Ticket</button>
+        <button onclick="logout()">Logout</button>
+        
+        <div id="train-section" style="display:none;">
+            <h3>Available Trains</h3>
+            <ul id="trains-list"></ul>
+        </div>
 
-    <!-- Reserve Ticket Form -->
-    <h2>Reserve Ticket</h2>
-    <form id="reserveForm">
-        User ID: <input type="text" id="userId"><br>
-        Train ID: <input type="text" id="trainId"><br>
-        Date: <input type="date" id="date"><br>
-        <button type="button" onclick="reserveTicket()">Reserve</button>
-    </form>
+        <div id="reserve-section" style="display:none;">
+            <h3>Reserve Ticket</h3>
+            <label for="train-id">Train ID:</label>
+            <input type="text" id="train-id"><br><br>
+            <label for="reservation-date">Reservation Date:</label>
+            <input type="date" id="reservation-date"><br><br>
+            <button onclick="submitReservation()">Submit Reservation</button>
+            <p id="reserve-message"></p>
+        </div>
+    </div>
 
-    <!-- Link to the external JavaScript file -->
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
+    <script src="/static/js/app.js"></script>
 </body>
 </html>

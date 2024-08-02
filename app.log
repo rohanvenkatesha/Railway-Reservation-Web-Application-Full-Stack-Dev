@@ -208,3 +208,45 @@ INFO:werkzeug:127.0.0.1 - - [01/Aug/2024 15:09:30] "GET /trains HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/Aug/2024 15:09:48] "POST /login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/Aug/2024 15:10:05] "POST /register HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/Aug/2024 15:11:20] "POST /reserve HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:48:11] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:48:11] "GET /static/js/app.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:48:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:48:38] "POST /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:48:38] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+ERROR:root:Error in /login: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:49:42] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+ERROR:root:Error in /login: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:49:47] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:49:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:49:50] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+ERROR:root:Error in /login: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:49:55] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:50:08] "POST /register HTTP/1.1" 200 -
+ERROR:root:Error in /login: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:50:14] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+ERROR:root:Error in /login: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:50:25] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:55:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:55:42] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:55:54] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:56:08] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:56:13] "GET /trains HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:56:22] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:56:25] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:58:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:58:29] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:58:37] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:58:37] "GET /static/css/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:58:37] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:58:51] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:58:55] "GET /trains HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Aug/2024 16:59:03] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -

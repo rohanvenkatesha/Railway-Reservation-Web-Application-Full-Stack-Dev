@@ -1,98 +1,116 @@
 const apiBaseURL = 'http://localhost:5000';
 
-function registerUser() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+// Register a new user
+async function register() {
+    const name = document.getElementById('register-name').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
 
-    fetch(`${apiBaseURL}/register`, {
+    const response = await fetch(`${apiBaseURL}/register`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ name, email, password })
-    })
-    .then(response => response.json())
-    .then(data => alert(data.message))
-    .catch(error => console.error('Error:', error));
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+        document.getElementById('register-message').innerText = 'Registration successful!';
+        document.getElementById('register-form').reset();
+    } else {
+        document.getElementById('register-message').innerText = result.message;
+    }
 }
 
-function loginUser() {
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
+// Login an existing user
+async function login() {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
 
-    fetch(`${apiBaseURL}/login`, {
+    const response = await fetch(`${apiBaseURL}/login`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email, password })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.message === 'Login successful!') {
-            alert(data.message);
-            console.log('User Info:', data.user); // Store user info if needed
-        } else {
-            alert(data.message);
-        }
-    })
-    .catch(error => console.error('Error:', error));
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'none';
+        document.getElementById('user-section').style.display = 'block';
+    } else {
+        document.getElementById('login-message').innerText = result.message;
+    }
 }
 
-// function getTrains() {
-//     fetch(`${apiBaseURL}/trains`, {
-//         method: 'GET'
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         const trainsList = document.getElementById('trainsList');
-//         trainsList.innerHTML = '';
-//         data.forEach(train => {
-//             const listItem = document.createElement('li');
-//             listItem.textContent = `Train: ${train.name}, Departure: ${train.departure_time}, Arrival: ${train.arrival_time}`;
-//             trainsList.appendChild(listItem);
-//         });
-//     })
-//     .catch(error => console.error('Error:', error));
-// }
-function getTrains() {
-    console.log('Fetching trains...');
-    fetch('http://localhost:5000/trains', {
-        method: 'GET'
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
+// Fetch available trains
+async function getTrains() {
+    const response = await fetch(`${apiBaseURL}/trains`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Data received:', data);
-        const trainsList = document.getElementById('trainsList');
+    });
+
+    if (response.ok) {
+        const trains = await response.json();
+        const trainsList = document.getElementById('trains-list');
         trainsList.innerHTML = '';
-        data.forEach(train => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `Train: ${train.name}, Departure: ${train.departure_time}, Arrival: ${train.arrival_time}`;
-            trainsList.appendChild(listItem);
+        trains.forEach(train => {
+            const li = document.createElement('li');
+            li.textContent = `Train ID: ${train.id}, Departure: ${train.departure_time}, Arrival: ${train.arrival_time}`;
+            trainsList.appendChild(li);
         });
-    })
-    .catch(error => console.error('Error fetching trains:', error));
+        document.getElementById('train-section').style.display = 'block';
+    } else {
+        document.getElementById('login-message').innerText = 'Failed to fetch trains. Please log in.';
+    }
 }
 
+// Show the reservation form
 function reserveTicket() {
-    const user_id = document.getElementById('userId').value;
-    const train_id = document.getElementById('trainId').value;
-    const date = document.getElementById('date').value;
+    document.getElementById('train-section').style.display = 'none';
+    document.getElementById('reserve-section').style.display = 'block';
+}
 
-    fetch(`${apiBaseURL}/reserve`, {
+// Submit a reservation request
+async function submitReservation() {
+    const trainId = document.getElementById('train-id').value;
+    const reservationDate = document.getElementById('reservation-date').value;
+
+    const response = await fetch(`${apiBaseURL}/reserve`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ user_id, train_id, date })
-    })
-    .then(response => response.json())
-    .then(data => alert(data.message))
-    .catch(error => console.error('Error:', error));
+        body: JSON.stringify({ train_id: trainId, date: reservationDate })
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+        document.getElementById('reserve-message').innerText = 'Ticket reserved successfully!';
+        document.getElementById('reserve-section').reset();
+    } else {
+        document.getElementById('reserve-message').innerText = result.message;
+    }
+}
+
+// Logout the user
+async function logout() {
+    await fetch(`${apiBaseURL}/logout`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    document.getElementById('user-section').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+    document.getElementById('register-form').style.display = 'block';
 }
