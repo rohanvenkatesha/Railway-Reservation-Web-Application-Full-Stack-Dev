@@ -161,11 +161,11 @@ This repository contains a Flask-based backend API for a railway reservation sys
 Feel free to submit pull requests or issues. Contributions are welcome!
 
 
+## Follow these Steps for API Testing
+
 Start the Flask app in a separate terminal
 
 $flask run
-
-## Follow these Steps for API Testing
 
 curl -X POST -H "Content-Type: application/json" -d "{\"name\":\"John Doe\", \"email\":\"john@example.com\", \"password\":\"1234\"}" http://localhost:5000/register
 
